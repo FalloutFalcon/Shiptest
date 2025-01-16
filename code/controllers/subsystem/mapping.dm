@@ -16,6 +16,7 @@ SUBSYSTEM_DEF(mapping)
 	var/list/ruin_types_probabilities = list()
 	var/list/ruins_templates = list()
 	var/list/planet_types = list()
+	var/list/mission_pois = list()
 
 	var/list/maplist
 	var/list/ship_purchase_list
@@ -206,6 +207,9 @@ SUBSYSTEM_DEF(mapping)
 
 		if(istext(data["prefix"]))
 			S.prefix = data["prefix"]
+
+		if(istext(data["manufacturer"]))
+			S.manufacturer = data["manufacturer"]
 
 		if(istext(data["faction"]))
 			S.faction_path = text2path(data["faction"])
